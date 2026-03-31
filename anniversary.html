@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 2nd Anniversary Kova ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #fff0f3;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(255, 75, 110, 0.2);
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            position: relative;
+            z-index: 10;
+            transition: all 0.5s ease;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #ff4b6e;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .anniversary-text {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            background: #ff4b6e;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(255, 75, 110, 0.3);
+        }
+
+        .btn:hover {
+            background: #e6395d;
+            transform: scale(1.05);
+        }
+
+        /* Letter Page */
+        #letter-page {
+            display: none;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .letter-content {
+            text-align: left;
+            line-height: 1.8;
+            color: #444;
+            font-size: 0.95rem;
+            max-height: 65vh;
+            overflow-y: auto;
+            padding-right: 15px;
+            white-space: pre-line; /* Keeps your line breaks */
+        }
+
+        /* Custom Scrollbar for the letter */
+        .letter-content::-webkit-scrollbar {
+            width: 5px;
+        }
+        .letter-content::-webkit-scrollbar-thumb {
+            background: #ff4b6e;
+            border-radius: 10px;
+        }
+
+        /* Floating Hearts Background */
+        .heart {
+            position: absolute;
+            color: #ff4b6e;
+            font-size: 20px;
+            user-select: none;
+            pointer-events: none;
+            z-index: 1;
+            animation: floatUp 4s linear infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="main-card">
+        <!-- FIRST PAGE -->
+        <div id="start-page">
+            <div style="font-size: 60px; margin-bottom: 10px;">🌹</div>
+            <h1>Happy 2nd Anniversary, Kova!</h1>
+            <p class="anniversary-text">I have something special to tell you...</p>
+            <button class="btn" onclick="showLetter()">Open My Letter ❤️</button>
+        </div>
+
+        <!-- SECOND PAGE (The Letter) -->
+        <div id="letter-page">
+            <h2 style="font-family: 'Dancing Script'; color: #ff4b6e; margin-top: 0;">Dearest Kanna,</h2>
+            <div class="letter-content">
+                Happy 2nd Anniversary! Kanna, Idhi oka digital love letter annuko. Appudu aina love letters vachaya mental neeku? 😂
+
+                April 1st roju aa ndhuku propose chesav, no ante april fool's day andham annukunnava? 😋
+
+                Ee feelings anni ala chpalo ardam kavadam ledu. You're my 2nd best person after my daddy kanna. Asal nen appudu expect cheyaledu ela office lo oka person ni kalusutha ani.
+
+                2 years journey intha baguntadi... trips, stunts enno memories. Edi ala end avuthado teliyadu kanna. You're the best person. Thank you for everything kanna. Na life ela change ayindi ante nak 2 years lo anni nve ayipoyinav.
+
+                I love you kanna. Nen ninnu appudu aina badha pettuthe sorry kanna. Kanna na life lo best thing ante nve kanna. Appudu appudu neeku nvu low chesukoni matladuthe nachadu, na life lo nen eppatiki varaku chusina vallo nvu thop bangaram! 🏆🌟
+
+                Nak kanna nvu eh akkuva kanna. Chalu iga appudu appudu nanu pattinchuko! 😘🥺❤️
+            </div>
+            <br>
+            <button class="btn" onclick="location.reload()">Read Again</button>
+        </div>
+    </div>
+
+    <script>
+        function showLetter() {
+            document.getElementById('start-page').style.display = 'none';
+            document.getElementById('letter-page').style.display = 'block';
+            document.getElementById('main-card').style.maxWidth = '500px';
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            heart.style.opacity = Math.random();
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 4000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
